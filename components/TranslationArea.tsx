@@ -36,14 +36,13 @@ const TranslationArea: FC<Props> = ({ value, onChange, onSubmit, readOnly, audio
                 resize="none"
                 rows={useBreakpointValue([6, null, 12]) ?? undefined}
                 size="lg"
-                data-gramm_editor={false}
                 onKeyPress={e => (e.ctrlKey || e.metaKey) && e.key === "Enter" && onSubmit?.()}
                 {...props}
             />
             <HStack
                 position="absolute"
                 bottom={4}
-                right={4}
+                left={4}
             >
                 {canCopy && (
                     <Tooltip label={hasCopied ? "Copied!" : "Copy to clipboard"}>
